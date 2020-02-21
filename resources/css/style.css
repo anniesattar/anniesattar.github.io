@@ -1,0 +1,747 @@
+
+/*-----------------------------------
+/*basic setup*/
+/*----------------------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*all margins and paddings are gone*/
+}
+
+html,
+body{
+    background-color: #ffffff;
+    color: rgb(49, 49, 49);
+    font-family: 'LATO', 'ARIAL', 'sans-serif';
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+
+.clearfix {zoom:1}/*this is ised to clear floats after an element*/
+.clearfix:after {
+    content: ".";
+    clear:both;
+    display:inline-block;
+    height:0;
+    visibility:hidden;
+    width:0;
+}
+
+
+/*-----------------------------------
+/*reusable components*/
+/*-----------------------------------*/
+
+.row{
+    max-width:1140px;
+    margin: 0 auto 0 auto;/*zoom:1; to center the container within the container*/ 
+    
+}
+section{
+    clear:both;
+    padding: 80px 0;/* to define space for each sections*/
+
+}
+
+    .box{
+        padding:1%;
+    }
+/*-----------------------------------
+/*heading*/
+/*-----------------------------------*/
+h1,
+h2,
+h3{
+    font-weight: 300;
+    text-transform: uppercase; 
+    /*letter-spacing: 1px;*/   
+}
+
+h1{
+    margin-top:0;
+    margin-bottom: 20px;/*to create distance between two buttons*/
+    color:#ffffff;
+    font-size: 240%;/* relative to the font size defined in html file*/
+    font-weight:300;
+    text-transform:uppercase;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2{
+font-size: 180%;
+word-spacing: 2px;
+text-align: center;
+margin-bottom: 30px;
+margin-top:70px;
+letter-spacing: 1px;
+}
+
+h3{
+
+    font-size: 110%;
+    margin-bottom:15 px;
+    margin-top:15px;
+
+}
+
+
+h2::after{/* for small little line after heading*/
+    display:block;
+    height:2px;
+    background-color: #e67e22;
+    content: " ";/*must define with a pseudo class*/
+    width:100px;
+    margin:0 auto;
+    margin-top:30px;
+
+}
+
+
+/*------------------------------------------------------
+/*paragraphs*/
+/*------------------------------------------------------*/
+
+.long-copy{
+    line-height: 140%;
+    width: 70%;/*to adjust the spacing sides of pargraphs*/
+    margin-left:15%;
+}
+
+.box p{
+    font-size:90%;
+    line-height:140%;
+}
+/*----------------------------------------------*/
+/*icons*/
+/*----------------------------------------------*/
+.icon-big{
+    font-size:400%;
+    display:block;
+    color:#e67e22;
+    margin-bottom:10px;
+}
+.icon-small{
+    display:inline-block;
+    width:30px;
+    text-align:center;
+    color:#e67e22;
+    font-size:120px;
+    margin-right: 10px;
+    /*secret to align text with icons*/
+
+    line-height:120%;
+    vertical-align:middle;
+    margin-top:-2px;
+
+}
+
+
+
+/*-----------------------------------
+/*links*/
+/*-----------------------------------*/
+
+
+a:link,
+a:visited{
+    color:#e67e22;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22;
+    transition:border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active{
+    color:#555;
+    border-bottom: 1px solid transparent;
+
+}
+
+
+
+
+/*-----------------------------------
+/*buttons*/
+/*-----------------------------------*/
+
+.btn:link,/*pseudo classes*/
+.btn:visited,
+input[type=submit] {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    color:#cf6d17;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+        }
+
+.btn-full:link,
+.btn-full:visited
+input[type=submit]{
+    background-color:#e67e22;
+    border: 1px  solid  #e67e22;
+    color:#ffffff;
+    margin-right:15px;
+    border-radius: 200px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px  solid  #e67e22;
+    color: #e67e22;
+    border-radius: 200px;/*to round the edges of buttun*/
+
+}
+.btn:hover,
+.btn:active
+input[type=submit]:hover,
+input[type=submit]:active{
+    background-color:#cf6d17;
+}
+
+.btn-full:hover,
+.btn-full:active,
+input[type=submit]:hover,
+input[type=submit]:active{
+    background-color:#cf6d17;
+    border: 1px  solid  #e67e22;
+    color:#ffffff;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active{
+    border: 1px  solid  #e67e22;
+    color: #ffffff;
+}
+
+
+
+/*-----------------------------------
+/*header*/
+/*-----------------------------------*/
+header{
+    background-image:linear-gradient(#aca8ac73,#000000), url(img/hero.jpg);
+    background-size: cover;
+    background-position:center;
+    height:100vh;
+    background-attachment: fixed;
+    }
+.hero-text-box{
+position: absolute;
+width:1140px;
+top:50%;
+left:50%;
+transform: translate(-50%,-50%);/*translate elements half of its width and height to th left*/
+
+}
+.logo{
+    height:100px;
+    width: auto;
+    float:left;
+    margin-top:20px;
+}
+
+
+/*---------------------------------------------*/
+/*main navigatin*/
+/*---------------------------------------------*/
+.main-nav{
+    float:right;
+    list-style: none;
+    margin-top:60px;
+}
+.main-nav li{
+    display:inline-block;
+    margin-left:40px;
+}
+
+/*---------------
+.main-nav li a{
+    color:#ffffff;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size:90%;/*18/20px(html code)=0.9=90%*/
+/*}
+--------------*/
+main-nav li a:link,
+main-nav li a:visited{
+    padding: 8px 0;
+    color:#fff;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid  transparent;
+    transition:border-bottom 0.2s;
+}
+.main-nav li a:hover,
+.main-nav lia:active{
+    border-bottom: 2px solid  #e67e22;
+}
+
+
+/*-----------------------------------
+/*features*/
+/*-----------------------------------*/
+
+.section-features .long-copy{
+    margin-bottom:40px;
+}
+
+
+
+
+/*-----------------------------------
+/*meals*/
+/*-----------------------------------*/
+
+.section-steps{
+    background-color: wheat;
+}
+.section-meals{
+    padding:0;
+    
+}
+.meals-showcase{
+    list-style:none;
+    width:100%;
+    
+}
+
+.meals-showcase li{
+    display: block;
+    float:left;
+    width:25%;/*100% width decided=4 pics to be shown=25%*/
+
+    
+}
+
+.meals-photo{
+    width:100%;
+    margin:0;
+    overflow:hidden; /*to contain the images within a browser*/
+    background-color: #000000;
+
+}
+.meals-photo img{
+    opacity: 0.7;
+    width:100%;
+    height:auto;
+    transform:scale(1.5);
+    transition: transform 0.5s, opacity 0.5s;
+
+}
+
+.meals-photo img:hover{
+    
+    opacity:1;
+    transform:scale(1.09);/*to avoid white line between img*/
+
+}
+
+
+/*-----------------------------------
+/*how it owrks*/
+/*-----------------------------------*/
+.section-steps {
+    background-color: #f4f4f4;
+}
+
+.steps-box {
+    margin-top: 30px;
+}
+
+
+.steps-box:first-child{
+text-align:right;/*works for text and images inline elements*/
+padding-right:3%;
+margin-top:30px;
+
+}
+
+
+.steps-box:last-child{
+padding-left:3%;
+margin-top:70px;
+}
+
+.app-screen{
+    width:40%;
+    
+}
+
+.works-step{
+    margin-bottom:50px;
+}
+
+.works-step:last-of-type{
+    margin-bottom:95px;
+
+}
+.works-step div{
+    color:#e67e22;
+    font-size:150%;
+    height:50px;
+    width:50px;
+    border:2px solid #e67e22;
+    display:inline-block;/*element doesnt force line break and number shown with text on one line"*/
+    border-radius:50%;
+    text-align:center;
+    margin-right:25px;
+    float: left;
+    padding:5px;
+ 
+    
+}
+.btn-app:link,
+.btn-app:visited{
+    border:0;
+}
+
+.btn-app img{
+    height:50px;
+    width:auto;
+    margin-right:10px;
+}
+
+
+
+/*-----------------------------------
+/*cities*/
+/*-----------------------------------*/
+
+
+.box img{
+    width:100%;
+    height:auto;
+    margin-bottom:15px;
+
+}
+
+.city-feature{
+    margin-bottom:5px;
+    margin-top:10px;
+
+}
+
+
+
+
+/*-----------------------------------
+/*customer testimonials*/
+/*-----------------------------------*/
+
+.section-testimonials{
+    background-image: linear-gradient(rgba(19, 15, 15, 0.219),rgba(22, 3, 3, 0.87)), url(img/back-customers.jpg);
+    background-size: cover;
+    color:#fff;
+    background-attachment: fixed;/*image stays in the same place not the text*/
+
+}
+
+blockquote{
+    padding:2%;
+    font-style: italic;/*we have included this in our font css file*/
+    line-height:145%;
+    position: relative;
+    margin-top:40px;
+}
+
+
+blockquote:before{
+    content:"\201C";/*code seen from net for quotation marks*/
+    font-size:500%;
+
+display:block;/*to define quotes position*/
+position: absolute;/*right this and ENSURE its parent has reelative postiiton*/
+top:-5px;
+left:-5px;
+
+}
+
+
+cite{
+    font-size:90%;
+    margin-top:25px;
+    display:block;/*to display img with name on seperate line*/
+   
+
+}
+/*
+blockquote::after{
+    content:"\201D";/*code seen from net for quotation marks*/
+ /*   font-size:500%;
+
+display:block;/*to define quotes position*/
+/*
+
+position: absolute;/*right this and ENSURE its parent has reelative postiiton*/
+/*
+top:170px;
+left:290px;
+
+}
+*/
+
+cite img{
+    height: 50px;
+    border-radius: 50%;
+    margin-right:10px;
+    vertical-align: middle;/*to align img with author name*/
+}
+
+
+/*-----------------------------------
+/*pricing plans*/
+/*-----------------------------------*/
+
+
+.section-plans{
+    background-color:rgb(211, 211, 211);
+
+}
+/*this plan box is created cos to wide and change the color of box with respect ot its parent box that is col"*/
+
+.plan-box{
+    background-color: #fff;
+    border-radius: 5px;
+    width:90%;
+    margin-left: 5%;
+    box-shadow: 0 2px 2px rgb(175, 88, 88);
+
+}
+
+.plan-box div{
+        padding:5px;
+        border-bottom: 1px solid rgb(170, 168, 168);
+
+
+}
+/*to differentiate pricing box with rest of container*/
+
+.plan-box div:first-child{
+    background-color: rgb(233, 224, 224);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+/*to center the button and adding 0 bodrder*/
+
+.plan-box div:last-child{
+    text-align:center;
+    border:0;
+}
+
+.plan-price{
+    font-size:300%;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color:#cf6d17
+
+}
+.plan-price span{
+    font-size:30%;/*this psan is child of above font-size 300%*/
+    font-weight:300;/*inheriting above class property font weight*/
+
+}
+
+
+.plan-price-meal{
+    font: size 80%;
+    }
+
+    .plan-price ul{
+        list-style:none;
+    }
+    .plan-box ul li{
+        list-style:none;
+        padding:5px 0;
+
+    }
+    .plan-price-meals li{
+        list-style:none;
+    }
+/*increase font size and reduce font weight*/
+
+
+
+/*-----------------------------------
+/*contact-form*/
+/*-----------------------------------*/
+
+
+.contact-form{
+    width:60%;
+    margin:0 auto;/*this will center the form in the page*/
+    
+    
+}
+
+input[type-text],
+input[type-email],/*this is used to make the checkbox and button ot the original size*/
+select,
+textarea
+{
+    width:100%;/*to fill whole area of them*/
+    padding:7px;
+    border-radius: 3px;
+    border:1px solid #313131;
+   
+}
+input{
+    
+    border-radius: 1px;
+    border:1px double #313131;
+}
+
+.textarea{
+    height:100px;
+}
+
+input[type-checkbox]{
+    margin:10px 5px 10px 0;/*to give some spacing between for elelments*/
+
+
+}
+
+
+*:focus {outline:none};/*to get rid of blue outline when mouse hovers over the box*/
+
+
+
+
+/*-----------------------------------
+/*footer*/
+/*-----------------------------------*/
+
+
+
+footer{
+    background-color: #e67e22;
+    padding:50px;
+    font-size:80%;
+    
+}
+.footer-nav{
+    list-style:none;
+    float:left;
+}
+.social-links{
+    list-style:none;
+    float:right;
+}
+.iconic{
+    margin-right:20px;
+}
+
+.footer-nav li,
+.social-links li
+{
+    display: inline-block;
+    margin-right:20px;
+}
+
+
+
+.footer-nav li:last-child,
+.social-links li:last-child{
+    margin-right:0px;
+    /*this one is used to position social links*/
+}
+.iconic{
+    margin:0;
+    padding:0;
+}
+
+.social-links li{
+    position:relative;
+    float:right;
+    margin:0;
+    overflow:hidden;
+    padding:0 24px 0 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.social-links li:before{
+    margin:0 0.5em;
+}
+    /*this one is used to position social links*/
+
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited{
+    text-decoration: none;
+    border:0;
+    color:rgba(29, 23, 23, 0.507);
+    
+    transition: color 0.3s;
+
+}
+.footer-nav li a:hover,
+.footer-nav li a:active{
+    color:rgb(71, 59, 59);
+
+}
+
+.social-links li a:link,
+.social-links li a:visited{
+    font-size:160%;
+}
+
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-google,
+.ion-social-instagram{
+    -webkit-transition: color 0.2s;
+    transition:color 0.2s;
+
+}
+
+.ion-social-facebook:hover{
+    color:#e67e22;
+}
+.ion-social-twitter:hover{
+    color:#2287e6;
+}
+.ion-social-google:hover{
+    color:#df0a0a;
+}
+.ion-social-instagram:hover{
+    color:#1a887f;
+}
+footer p{
+    color:#888;
+    text-align:center;
+    margin-top: 35px;/*to create space between last line and above line of links in footer*/
+
+}
+
+
+/*
+remove links from second last section and insert bg color in footer*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
