@@ -2,9 +2,9 @@
 
 ---
 
-### Category Name 1 
+### Category Name as 1 
 
-[Project 1 Title](/sample_page)
+[Project 10 Title](/sample_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
